@@ -1,0 +1,20 @@
+[package]
+name = "rust-logs-sample"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+prost = "0.12"
+prost-types = "0.12"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[lib]
+name = "rust_logs_sample"
+path = "src/main.rs"
+
+[[bench]]
+name = "logs_traversal"
+harness = false
+
+[build-dependencies]
+prost-build = "0.12"
